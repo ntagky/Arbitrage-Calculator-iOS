@@ -6,7 +6,7 @@
 ## Features
 
 - User-friendly UI
-- Simple to user
+- Simple to use
 - Adjust stakes for custom profits
 
 ## Installation

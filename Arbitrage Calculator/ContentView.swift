@@ -240,28 +240,28 @@ struct ContentView: View {
                 var sso: String = secondOdd;
                 var sfs: String;
                 if (idx == 0) {
-                    firstStake = newValue.isEmpty ? "" : newValue.description
-                    sfs = newValue.isEmpty ? "0" : newValue.description
+                    firstStake = newValue.isEmpty ? "" : newValue
+                    sfs = newValue.isEmpty ? "0" : newValue
                 } else {
                     sfs = firstStake;
                 }
                 var sss: String;
                 if (idx == 1) {
-                    secondStake = newValue.isEmpty ? "" : newValue.description
-                    sss = newValue.isEmpty ? "0" : newValue.description
+                    secondStake = newValue.isEmpty ? "" : newValue
+                    sss = newValue.isEmpty ? "0" : newValue
                 } else {
                     sss = secondStake;
                 }
-                print("SFS \(sfs) | SSS \(sss)")
-                totalStake = String((Float(sfs) ?? 0) + (Float(sss) ?? 0))
-                var sbank: String = totalStake;
                 
-                // Convert them to decimal/format state
+                // Convert them to decimal with dot format state
+                // Due to each country's format, keyboards may have , instead of .
                 sfo = sfo.replacingOccurrences(of: ",", with: ".")
                 sso = sso.replacingOccurrences(of: ",", with: ".")
                 sfs = sfs.replacingOccurrences(of: ",", with: ".")
                 sss = sss.replacingOccurrences(of: ",", with: ".")
-                sbank = sbank.replacingOccurrences(of: ",", with: ".")
+                
+                totalStake = String((Float(sfs)!) + (Float(sss)!))
+                var sbank: String = totalStake;
                 
                 let fo: Float! = Float(sfo)
                 let so: Float! = Float(sso)
@@ -281,9 +281,6 @@ struct ContentView: View {
                     bank = fs
                 }
                 
-                print("fs \(firstStake) - sf \(secondStake)")
-                print("fs \(String(fs)) - sf \(String(ss))")
-                print("bank \(String(bank)) - totalstake \(totalStake)")
                 firstProfit = String(rounder(number: fo * fs - bank));
                 secondProfit = String(rounder(number: so * ss - bank));
             } else {
