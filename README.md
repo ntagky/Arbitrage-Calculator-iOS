@@ -17,4 +17,13 @@
 
 No extra the dependencies needed.
 
-*Android version exists in [DAG-Betting](https://play.google.com/store/apps/developer?id=ntagks) on Google Play store.*
+## Preview
+
+![image info](doc/app_preview.png)
+
+## TODO
+
+- Add 3-way bets
+- Stylish UI
+
+*Android version exists in [DAG-Betting](https://play.google.com/store/apps/details?id=com.ntagk.vipbettingtips) on Google Play store.*
